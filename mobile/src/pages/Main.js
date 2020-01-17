@@ -59,8 +59,7 @@ export default function Main({ navigation }) {
       }
     });
 
-    console.log(response.data);
-    setDevs(response.data.devs);
+    setDevs(response.data);
   }
 
   if (!currentRegion) {
@@ -78,8 +77,8 @@ export default function Main({ navigation }) {
           <Marker
             key={dev._id}
             coordinate={{
-              latitude: dev.location.coordenates[1],
-              longitude: dev.location.coordenates[0]
+              latitude: dev.location.coordinates[1],
+              longitude: dev.location.coordinates[0]
             }}
           >
             <Image style={styles.avatar} source={{ uri: dev.avatar_url }} />
